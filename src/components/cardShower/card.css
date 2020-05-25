@@ -1,0 +1,92 @@
+   #cardContainer {
+    /* display: grid;
+    grid-template-columns:  10% 10% 60%
+    20%  20%; */
+    overflow-y: hidden;
+    overflow-x: hidden;
+   }
+
+   .box {
+       display: inline-block;
+        /* width: 180px;
+        height: 250px; */
+   }
+
+   .state1 {
+        position: relative;
+        top: -100px;
+        /* margin-left: 150px; */
+        /* background-color: red; */
+    }
+
+    .state2 {
+        position: relative;
+        top: -140px !important;
+        margin-left: -150px;
+        /* background-color: pink; */
+        /* z-index: 98; */
+    }
+
+    .state3 {
+        /* background-color: gray; */
+        position: relative;
+        margin-left: -90px;
+        z-index: 99;
+    }
+
+    .state4 {
+        position: relative;
+        top: -140px;
+        margin-left: -100px;
+        /* background-color: green; */
+        z-index: 98;
+    }
+
+    .state5 {
+        position: relative;
+        top: -100px;
+        margin-left: -100px;
+        z-index: 97;
+        /* background-color: lightgray; */
+    }
+
+    /* react transition */
+    /* appear - on page load */
+  .fade-appear {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 150ms linear;
+  }
+
+  /* enter */
+  .fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .fade-enter-active {
+    opacity: .5;
+    transition: opacity 150ms linear;
+  }
+
+  .face-enter-done {
+    opacity: 1;
+  }
+
+  /* exit */
+  .fade-exit {
+    opacity: 1;
+  }
+
+  .fade-exit-active {
+    opacity: .5;
+    transition: opacity 150ms linear;
+  }
+
+  .face-exit-done {
+    opacity: 0;
+  }
