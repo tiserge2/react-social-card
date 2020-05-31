@@ -7,6 +7,7 @@ import indexStyle from '../index.css'
 import classes from './App.css'
 import ThemeChanger from '../components/themeChanger/ThemeChanger'
 import checkSimilarity from '../utils/checkSimilarity'
+import {isFirstTime} from '../utils/visitor'
 
 
 class App extends React.Component {
@@ -132,6 +133,36 @@ class App extends React.Component {
         infoBackgoundColor: '#00bcd4',
       }
     }
+  }
+
+  componentDidMount = () => {
+    if(isFirstTime()) {
+      console.log("Send +1 visit to server")
+      this.updateVisit() 
+    } else {
+      console.log("Dont send +1 visit to server")
+    }
+  }
+
+  updateVisit = () => {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    fetch('https://tiserge2-visit.herokuapp.com/api/addVisit', {
+      method: 'POST',
+      mode: "no-cors",
+      cache: "no-cache", 
+      credentials: "same-origin",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type':'application/x-www-form-urlencoded'
+      },
+      redirect: "follow", 
+      referrer: "no-referrer", 
+      body: 'websiteId=5ed2ee6b7c213e044cc03582'
+    }).then(res => {
+      console.log(res)
+    }).catch(err => {
+      // throw new Error(err)
+    })
   }
 
   handleSwipeChange = direction => {
