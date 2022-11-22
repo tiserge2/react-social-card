@@ -16,7 +16,7 @@
     "react-color": "^2.18.1",
     "react-dom": "^16.13.1",
     "react-modal-image": "^2.5.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.1"
   },
   "scripts": {
